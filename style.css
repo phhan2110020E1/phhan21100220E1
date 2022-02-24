@@ -1,0 +1,171 @@
+
+  *{
+    font-family: tahoma;
+  }
+  .logo2{
+    font-size: 1.75em;
+    color: skyblue;
+  }
+  #image{
+    width: 100%;
+  }
+  .menu a {
+    text-decoration: none;
+    color: black;
+    font-size: 1.5em;
+    
+}
+.img{
+  padding-left: 9px;
+}
+.time{
+  border: 1px solid yellowgreen;
+  background-color: steelblue;
+}
+.ticket{
+  border: 1px solid red;
+  background-color: red;
+}
+.text1{
+  color: black;
+  position: absolute;
+  top: 50px;
+  left: 40px;
+  }
+.text2{
+  position: absolute;
+  background-color: red;
+  text-decoration: none;
+  font-size: 1em;
+  color: #000;
+  border-radius: 10px 10px 10px 10px;
+  border: 1px solid blue;
+  padding-top: 4px;
+  width: 100px;
+  height: 30px;
+  bottom: 100px;
+  left: 180px;
+}
+.text2:hover{
+  width: 110px;
+  height: 35px;
+  font-size: 1.25em;
+  display: inline;
+  background-color: blue;
+}
+.menu a.cl:hover{
+    font-size: 1.5em;
+    color: rgba(53, 255, 2, 0.877);
+}
+.menu li {
+    margin-bottom: 10px;
+    float: left;
+    padding: 2px 20px;
+    display: inline;
+}
+.carousel-caption{
+  padding: 100px 70px 70px;
+} 
+.news{
+  padding-top: 370px;
+  padding-bottom: 30px;
+}
+.gallery{
+  padding: 550px 0 30px 0;
+  padding-left: 45%;
+}
+.card-title{
+  font-size: 2em;
+  font-weight: bold;
+}
+.card-text{
+  padding-top: 20px;
+  font-size: 1.15em;
+}
+  /*footer*/
+  .menuFooter{
+  padding: 10px 0 10px 0;
+	display: flex;
+	justify-content: center;
+  }
+  .menuFooter1{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+.menuFooter a{
+	font-size: 1.2em;
+	color: #fff;
+	margin: 0 10px;
+	display: inline-block;
+	text-decoration: none;
+}
+#icon{
+  padding: 10px 0 10px 0;
+}
+#icon a{
+  padding-left: 30px;
+  color: white;
+  font-size: 55px;
+}
+#icon a:hover{
+  color: rgba(53, 255, 2, 0.877);
+}
+.info2 a{
+  font-size: 1.2em;
+  text-decoration: none;
+  color: white;
+}
+footer{
+  padding: 10px 0 10px 0;
+  font-size: 1.2em;
+  background-color: black;
+  color: white;
+}
+footer a:hover{
+  font-size: 1.5em;
+  color: rgba(53, 255, 2, 0.877);
+}
+  /*contact*/
+  .name{
+    padding-left: 65px;
+    font-size: 35px;
+    color: skyblue;
+  }
+  
+  .info1{
+    padding-top: 50px;
+  }
+  .info1 a{
+    font-size: 1.5em;
+    color: black;
+    text-decoration: none;
+  }
+  /*bonus*/
+  .right-side-bar {
+    text-align: center;
+    justify-content: center;
+    padding: 20px 5px;
+    display: block;
+    position: fixed;
+    top: 30%;
+    right: 10px;
+    z-index: 99;
+    height: 150px;
+    width: 50px;
+    font-size: 25px;
+    background: rgba(3, 3, 3, 0.5);
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  }
+  .right-side-bar a{
+    color: white;
+  }
+  .right-side-bar a:hover{
+    font-size: 1.5em;
+  color: rgba(53, 255, 2, 0.877);
+  }
+  
+  
+  
+  

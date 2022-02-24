@@ -1,0 +1,1139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bootstrap Example</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Old+Standard+TT&display=swap" rel="stylesheet">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-route.min.js"></script>
+
+</head>
+<style>
+  * {
+    box-sizing: border-box;
+  }
+
+  .bg-img {
+    background-image: url("/images/TL80.gif");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-bottom: 15px solid rgb(0, 0, 0);
+    border-top: 65px solid rgba(0, 0, 0, 0.63);
+    position: relative;
+  }
+
+  .container {
+    margin: 20px;
+    width: auto;
+    float: right;
+  }
+
+  .topnav {
+    overflow: hidden;
+    background-color: rgba(51, 51, 51, 0);
+    margin-top: 50px;
+  }
+
+  .topnav a {
+    float: right;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 23px;
+    animation: move 15s linear infinite;
+    -webkit-animation: move 15s linear infinite;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  }
+
+  .topnav :hover {
+    background-color: rgba(0, 0, 0, 0);
+    color: rgba(255, 255, 255, 0.986);
+    background-image: url("data:image/svg+xml,%3Csvg version='1.1' id='Layer_1_1_' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 19.3 6' style='enable-background:new 0 0 19.3 6%3B' xml:space='preserve'%3E%3Cstyle type='text/css'%3E.st0%7Bfill:%23ffffff%3B%7D%3C/style%3E%3Cpath class='st0' d='M-5.5 3.8C-4.2 4.8-2.8 6 0 6s4.2-1.2 5.5-2.2C6.6 2.8 7.6 2 9.7 2s3 0.8 4.2 1.8c1.3 1 2.7 2.2 5.5 2.2s4.2-1.2 5.5-2.2l-1.4-0.9c-1.1 1-2.1 1.8-4.2 1.8s-3-0.8-4.2-1.8c-1.2-1-2.7-2.2-5.4-2.2c-2.8 0-4.2 1.2-5.5 2.2C3 3.9 2.1 4.7 0 4.7s-3-0.8-4.2-1.8L-5.5 3.8z'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+    background-position-x: 0%;
+    background-position-y: 0%;
+    background-size: auto auto;
+    background-repeat: repeat-x;
+    background-position: 12px 19px;
+    animation: move 25s linear infinite;
+    -webkit-animation: move 15s linear infinite;
+  }
+
+  #logo {
+    width: 20%;
+    position: relative;
+    z-index: 1;
+  }
+
+  @-webkit-keyframes move {
+    from {
+      background-position: 2px 19px;
+    }
+
+    to {
+      background-position: 500px 19px;
+    }
+  }
+
+  @keyframe move {
+    from {
+      background-position: 20px 19px;
+    }
+
+    to {
+      background-position: 700px 19px;
+    }
+  }
+
+  .container1 {
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-bottom: 15px solid black;
+  }
+
+
+  .ht {
+    top: 10px;
+    position: absolute;
+    right: 0;
+    z-index: 1;
+  }
+
+
+  p {
+    background-color: rgb(255, 255, 255);
+    color: #37506a;
+    font-size: 20px;
+  }
+
+  p1 {
+    background-color: #dbf2ff;
+    color: #31475a;
+  }
+
+  .tab {
+    float: left;
+    border: 1px solid #ccc;
+    background-color: #000000;
+    width: 30%;
+    color: white;
+  }
+
+  .tab button {
+    display: block;
+    background-color: inherit;
+    color: rgb(255, 255, 255);
+    padding: 22px 16px;
+    width: 100%;
+    border: none;
+    outline: none;
+    text-align: left;
+    cursor: pointer;
+    font-size: 17px;
+    border: 1PX SOLID WHITE;
+  }
+
+  .tab button:hover {
+    background-color: rgba(212, 212, 212, 0.534);
+    color: black;
+  }
+
+  .tab button.active {
+    background-color: #ccc;
+  }
+
+  .tabcontent {
+    float: left;
+    padding: 0px 12px;
+    border: 1px solid #ccc;
+    width: 70%;
+    border-left: none;
+    height: 300px;
+    display: none;
+    background-color: #000000;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='250' height='30' viewBox='0 0 1000 120'%3E%3Cg fill='none' stroke='%23222' stroke-width='10' %3E%3Cpath d='M-500 75c0 0 125-30 250-30S0 75 0 75s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 45c0 0 125-30 250-30S0 45 0 45s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 105c0 0 125-30 250-30S0 105 0 105s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 15c0 0 125-30 250-30S0 15 0 15s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500-15c0 0 125-30 250-30S0-15 0-15s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 135c0 0 125-30 250-30S0 135 0 135s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  H2,
+  P3 {
+    color: WHITE;
+  }
+
+  .clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+
+  .row {
+    display: flex;
+    left: 0;
+  }
+
+
+  .left {
+    flex: 35%;
+    padding: 15px 0;
+  }
+
+  .left h2 {
+    padding-left: 8px;
+  }
+
+  .right {
+    flex: 65%;
+    padding: 15px;
+    background-color: rgb(115, 169, 194);
+    background-color: #000000;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='250' height='30' viewBox='0 0 1000 120'%3E%3Cg fill='none' stroke='%23222' stroke-width='10' %3E%3Cpath d='M-500 75c0 0 125-30 250-30S0 75 0 75s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 45c0 0 125-30 250-30S0 45 0 45s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 105c0 0 125-30 250-30S0 105 0 105s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 15c0 0 125-30 250-30S0 15 0 15s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500-15c0 0 125-30 250-30S0-15 0-15s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 135c0 0 125-30 250-30S0 135 0 135s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  .MJ {
+    width: 40%;
+    position: relative;
+    float: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border: 10PX SOLID rgba(0, 0, 0, 0.685);
+    border-radius: 20PX;
+
+  }
+
+  .FF {
+    width: 41%;
+    position: relative;
+    float: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border: 10PX SOLID rgba(0, 0, 0, 0.685);
+    border-radius: 20PX;
+
+  }
+
+  .BP {
+    width: 35%;
+    position: relative;
+    float: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border: 10PX SOLID rgba(0, 0, 0, 0.685);
+    border-radius: 20PX;
+  }
+
+  .BSS {
+    width: 40%;
+    position: relative;
+    float: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border: 10PX SOLID rgba(0, 0, 0, 0.685);
+    border-radius: 20PX;
+
+  }
+
+  .LF {
+    width: 36%;
+    position: relative;
+    float: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border: 10PX SOLID rgb(0, 0, 0);
+    border-radius: 20PX;
+  }
+
+  .HH {
+    width: 44%;
+    position: relative;
+    float: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border: 10PX SOLID rgba(255, 255, 255, 0.473);
+    border-radius: 20PX;
+  }
+
+  .RG {
+    width: 40%;
+    position: relative;
+    float: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border: 10PX SOLID rgba(255, 255, 255, 0.473);
+    border-radius: 20PX;
+  }
+
+  .TM {
+    width: 42%;
+    position: relative;
+    float: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border: 10PX SOLID rgba(255, 255, 255, 0.473);
+    border-radius: 20PX;
+  }
+
+  .WCA {
+    width: 36%;
+    position: relative;
+    float: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border: 10PX SOLID rgba(255, 255, 255, 0.473);
+    border-radius: 20PX;
+  }
+
+  .WS {
+    width: 43%;
+    position: relative;
+    float: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border: 10PX SOLID rgba(255, 255, 255, 0.473);
+    border-radius: 20PX;
+  }
+
+  .YCW {
+    width: 23%;
+    position: relative;
+    float: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border: 10PX SOLID rgba(255, 255, 255, 0.473);
+    border-radius: 20PX;
+  }
+
+  .ZS {
+    width: 57%;
+    position: relative;
+    float: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border: 10PX SOLID rgba(255, 255, 255, 0.473);
+    border-radius: 20PX;
+  }
+
+  .WA {
+    width: 40%;
+    position: relative;
+    float: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border: 10PX SOLID rgba(255, 255, 255, 0.473);
+    border-radius: 20PX;
+  }
+
+  .AP {
+    width: 45%;
+    position: relative;
+    float: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border: 10PX SOLID rgba(255, 255, 255, 0.473);
+    border-radius: 20PX;
+  }
+
+  .EW {
+    width: 40%;
+    position: relative;
+    float: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border: 10PX SOLID rgba(255, 255, 255, 0.473);
+    border-radius: 20PX;
+  }
+
+  .footer {
+    position: a;
+    bottom: 0;
+    width: 100%;
+    height: 410px;
+    background-color: #3e5468;
+
+  }
+
+  .txt1 {
+    font-family: 'Old Standard TT', serif;
+    ;
+    font-size: 70px;
+    text-align: center;
+    border: 100px solid rgba(0, 0, 0, 0);
+  }
+
+  p4 {
+    font-family: 'Old Standard TT', serif;
+    ;
+    font-size: 20px;
+    text-align: center;
+    border: 100px solid rgba(0, 0, 0, 0);
+  }
+
+  .two {
+    border-top: 10px double rgba(255, 255, 255, 0.726);
+
+  }
+
+  .logo2 {
+    bottom: 0;
+    position: relative;
+    width: 50%;
+    border-right: 10px double rgba(255, 255, 255, 0.726);
+  }
+  .namelogo1 {
+    width: 13%;
+    position: absolute;
+    left: 19%;
+    top: 364%;
+  }
+
+  .namelogo2 {
+    width: 13%;
+    position: absolute;
+    left: 29%;
+    top: 364%;
+  }
+  .grid-container {
+    display: grid;
+    grid-gap: 10px;
+    padding: 10px;
+  }
+
+  .grid-item {
+    text-align: center;
+    padding: 20px;
+    font-size: 20px;
+  }
+
+  .item1 {
+    grid-column: 1/span 2;
+    grid-row: 2/span 4;
+    background-image: url(NEXUS-2.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-right: 3px double white;
+  }
+
+  .item2 {
+    grid-column: 3/ span 4;
+    grid-row: 2;
+    font-size: 23PX;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #92C1FF;
+    border-top: 3px double white;
+    border-bottom: 2px dotted white;
+    text-align: center;
+    font-weight: bolder;
+  }
+
+  .item3 {
+    grid-column: 3 / span 2;
+    grid-row: 3;
+  }
+
+  .item4 {
+    grid-column: 5 /span 2;
+    grid-row: 3;
+    font-weight: bolder;
+
+  }
+
+  .item5 {
+
+    grid-column: 3/ span 2;
+    grid-row: 4;
+    font-weight: bolder;
+
+  }
+
+  .item6 {
+    grid-column: 5 / span 2;
+    grid-row: 4;
+    text-align: center;
+    color: black;
+  }
+  P4 {
+    color: #92C1FF;
+    font-size: 12PX;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  }
+
+  P5 {
+    color: #92C1FF;
+    font-size: 12PX;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  }
+
+  P6 {
+    color: #92C1FF;
+    font-size: 12PX;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  }
+
+  P7 {
+    color: #92C1FF;
+    font-weight: bolder;
+    font-size: 23PX;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  }
+  a{
+    color: steelblue;
+    text-decoration: none;
+  }
+  a:hover{
+    color: rgb(27, 51, 71);
+    text-decoration: none;
+  }
+</style>
+
+<body>
+
+  <div id="navbar">
+    <div class="ht">
+      <p>Open Today From: 9:30AM - 5:00PM<p1>Get Ticket</p1>
+      </p>
+
+    </div>
+
+    <div class="bg-img">
+
+      <image id="logo" src="NEXUS-2.png"></image>
+
+      <div class="container">
+        <div class="topnav">
+          <a href="LOGIN.html">LOGIN</a>
+          <a href="EVENTS.html">EVENTS</a>
+          <a href="gallery.html">GALLERY</a>
+          <a href="contact.html">CONTACT</a>
+          <a href="home.html">HOME</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  </nav>
+
+
+  <div class="container1">
+    <!-- Carousel -->
+    <div id="demo" class="carousel slide" data-bs-ride="carousel">
+
+      <!-- Indicators/dots -->
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+        <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+        <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+      </div>
+
+      <!-- The slideshow/carousel -->
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="jellyfish-07.jpg" class="d-block" style="width:100%">
+          <div class="carousel-caption">
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="jellyfish-14.jpg" class="d-block" style="width:100%">
+          <div class="carousel-caption">
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="jellyfish-16.jpg" class="d-block" style="width:100%">
+          <div class="carousel-caption">
+          </div>
+        </div>
+      </div> <!-- Left and right controls/icons -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
+    </div>
+
+  </div>
+
+
+
+
+
+  <div class="tab">
+    <button class="tablinks" onmouseover="openCity(event, 'AP')">
+      <div id="APO" name="timeline">ADELIE PENGUIN</div>
+    </button>
+    <button class="tablinks" onmouseover="openCity(event, 'BP')">BANDED PIPEFISH</button>
+    <button class="tablinks" onmouseover="openCity(event, 'BSS')">BISCUIT SEA STAR</button>
+    <button class="tablinks" onmouseover="openCity(event, 'EW')">EASTERN WHIPBIRD</button>
+    <button class="tablinks" onmouseover="openCity(event, 'MJ')">MOON JELLY</button>
+    <button class="tablinks" onmouseover="openCity(event, 'FF')">FLYINGFISH</button>
+    <button class="tablinks" onmouseover="openCity(event, 'LF')">LIONFISH</button>
+    <button class="tablinks" onmouseover="openCity(event, 'HH')">THE GREAT HAMMERHEAD</button>
+    <button class="tablinks" onmouseover="openCity(event, 'RG')">RED GURNARD</button>
+    <button class="tablinks" onmouseover="openCity(event, 'TM')">TESSELLATE MORAY</button>
+    <button class="tablinks" onmouseover="openCity(event, 'WCA')">WESTERN CLOWN ANEMONEFISH</button>
+    <button class="tablinks" onmouseover="openCity(event, 'WS')">WEEDY SCORPIONFISH</button>
+    <button class="tablinks" onmouseover="openCity(event, 'YCW')">YELLOW CRESTED WEEDFISH</button>
+    <button class="tablinks" onmouseover="openCity(event, 'ZS')">ZEBRA SHARK</button>
+    <button class="tablinks" onmouseover="openCity(event, 'WA')">WARATAH ANEMONE</button>
+  </div>
+  </div>
+  <div id="AP" class="tabcontent">
+    <h2>
+      <div id="APO" name="timeline">ADELIE PENGUIN</div>
+    </h2>
+    <p3>Scientific name: Pygoscelis adeliae</p3>
+    <image class="AP" src="/IMAGES/Adelie Penguin 2.jpg"></image>
+    <h3>Introduction</h3>
+
+    Like all penguins, Adelie Penguins live at sea for most of the year, swimming underwater with the aid of their
+    flipper-like wings to catch fish.
+    <H3>Identification</H3>
+
+    The Adelie Penguin is a medium-sized penguin of sturdy appearance. The head does not have a crest but the rear of
+    the crown is peaked, which is characteristic of the species. The head and chin are black. The bill is black with a
+    dark red base and tip and appears stubby because it is covered with feathers for half its length. A conspicuous
+    white eye-ring gives the bird a staring appearance. The feet are flesh pink.
+    <H3>Habitat</H3>
+
+    Adelie Penguins live mainly at sea, generally within the limits of pack-ice.
+
+    <h3>Distribution</h3>
+
+    Adelie Penguins are found mainly at sea in southern oceans around the coasts and islands of Antarctica, and only
+    very rarely appear on the Australian coast, in winter.
+    <H3> Feeding and diet</H3>
+
+    Adelie Penguins feed mainly on fish, crustaceans, amphipods and cephalopods. They can dive to about 175 m but
+    usually feed up to 70 m below the water's surface.
+
+    <H3>Communication</H3>
+
+    During courting the Adelie Penguin call is like a rhythmic throbbing sound.
+
+    <H3>Breeding behaviours</H3>
+
+    Adelie Penguins breed in summer, mainly on the rocky platforms of islands of southern oceans. The nests are made out
+    of small stones, and males and females share incubation and care of the young almost equally.
+
+    Breeding Season: October to March.
+    Clutch Size: usually two
+    Incubation: 36 days
+    Nestling Period: 60 days
+    <H3>Conservation status</H3>
+
+    Heavy commercial fishing impacts negatively on the food supplies of Adelie Penguins.
+
+  </div>
+  <div id="MJ" class="tabcontent">
+    <h2>MOON JELLY</h2>
+    <p3>Scientific name: Aurelia aurita</p3>
+    <image class="MJ" src="/IMAGES/jane-ta-oss48ywQ2VQ-unsplash.jpg"></image>
+    <h3>Introduction</h3>
+
+    The Moon Jelly is a common ocean animal and can sometimes be extremely abundant.
+
+    <h3> Identification</h3>
+
+    It has a transparent jelly-like bell with four horseshoe-shaped, pinkish reproductive organs that surround a square
+    mouth. At each corner of the mouth a feeding tentacle hangs down into the water below.
+
+    <h3>Habitat</h3>
+
+    Moon Jellies live in oceans, coastal waters and estuaries.
+
+    <h3>Distribution</h3>
+
+    Moon Jellies are found throughout Australia.
+
+
+    <!-- Satellite View -->
+    <h3>Feeding and diet</h3>
+
+    At each corner of the mouth in Moon Jellies a feeding tentacle hangs down into the water below. These are equipped
+    with stinging cells (nematocysts) to capture small prey that are dragged inward towards the mouth.
+
+    <h3>Other behaviours and adaptations</h3>
+
+    The outer edge of the Moon Jelly's bell also has tentacles, as well as eight special sensory organs that tell the
+    jellyfish where it is in the water column. Currents may sweep many of these jellyfish into sheltered bays and they
+    are often washed up on beaches.
+
+    <h3>Predators</h3>
+
+    The Moon Jelly is one of the favourite foods of many species of turtles.</p3>
+  </div>
+
+  <div id="FF" class="tabcontent">
+    <h2>FLYINGFISH</h2>
+    <p3>Scientific name: Cheilopogon sp</p3>
+    <image class="FF" src="/IMAGES/john-cobb-6btEyS3AJrI-unsplash.jpg"></image>
+    <h3>Introduction</h3>
+
+    Flyingfishes don't really fly - they glide.
+
+    <h3>Distribution</h3>
+
+    They are found near the surface of all tropical and some temperate marine waters.
+    <BR>
+
+    The map below shows the Australian distribution of the species based on public sightings and specimens in Australian
+    Museums
+
+    <!-- Satellite View -->
+    <h3>Feeding and diet</h3>
+
+    Most have small mouths and eat plankton.
+    <h3>Other behaviours and adaptations</h3>
+
+    The outer edge of the Moon Jelly's bell also has tentacles, as well as eight special sensory organs that tell the
+    jellyfish where it is in the water column. Currents may sweep many of these jellyfish into sheltered bays and they
+    are often washed up on beaches.
+
+    <H4>'Flying':</H4>
+
+    Flying fishes are well known for their gliding (rather than flying) ability. They can glide for 200 m or more. These
+    fishes are often seen taxiing just above the water surface, rapidly beating the water with the large lower lobe of
+    the caudal fin.
+    <BR>
+
+    The two-wing flyingfishes have enlarged pectoral fins only. They generally do not glide as far as the four-wing
+    flyingfishes.
+    <BR>
+
+    Flyingfishes use their gliding ability to escape from predators. A flying fish will commonly glide at double its
+    swimming speed. Some species have been known to accelerate from a fast swimming speed of about 36 km/hour to as much
+    as 72 km/hour in air.
+    <BR>
+
+    Unless the day is sunny and the water is particularly still, a pursuing predator will not be able to see a flying
+    fish in the air because of refraction at the water surface.
+
+    <H4>Eye shape:</H4>
+
+    Most fishes have curved corneas. Flyingfishes have flattened corneas that enable them to focus in and out of the
+    water. This didn't seem to help the fish in the image. It was caught after its flight was abruptly terminated by
+    District Fisheries Officer M. Proctor's head.
+  </div>
+
+  <div id="BP" class="tabcontent">
+    <h2>BANDED PIPEFISH</h2>
+    <p3>Scientific name: Dunckerocampus dactyliophorus</p3>
+    <image class="BP" src="/IMAGES/Orange Banded Pipefish.jpg"></image>
+    <h3>Introduction</h3>
+
+    The Banded Pipefish can be recognised by its pattern of red to blackish bars. In Australia, it occurs in marine
+    tropical waters of Australia.
+    <H3> Identification</H3>
+
+    The Banded Pipefish has red to blackish bars, a distinct caudal fin, and a very long snout.
+
+    <H3>Habitat</H3>
+
+    The species lives in caves and crevices.
+
+
+    <h3>Distribution</h3>
+
+
+    The map below shows the Australian distribution of the species based on public sightings
+  </div>
+
+  <!-- Satellite View -->
+
+  <div id="BSS" class="tabcontent">
+    <h2>BISCUIT SEA STAR</h2>
+    <p3>Scientific name: Tosia australis</p3>
+    <image class="BSS" src="/IMAGES/12.jpg"></image>
+    <h3>Introduction</h3>
+
+    This distinctive bright orange-red sea star is called the Biscuit Sea Star because it is about the size of a large
+    biscuit.
+
+    <H3> Identification </H3>
+
+    The upper surface of the Biscuit Sea Star is covered with many interlocking small plates and six to eight larger
+    plates along the edge of each of their short arms. It is a distinctive bright orange-red.
+
+    <H3> Habitat </H3>
+
+    The Biscuit Sea Star lives on intertidal rocky shores and in coastal waters to a depth of 40 m.
+    <h3>Distribution</h3>
+
+    The Biscuit Sea Star is found in Sydney, Victoria, South Australia, Western Australia, and Tasmania.
+    <!-- Satellite View -->
+    <h3>Feeding and diet</h3>
+
+    Biscuit Sea Stars feed on sea squirts, sponges, bryzoans and algae.
+
+  </div>
+
+  <div id="EW" class="tabcontent">
+    <h2>EASTERN WHIPBIRD</h2>
+    <p3>Scientific name: Psophodes olivaceus</p3>
+    <image class="EW" src="/IMAGES/Eastern Whipbird.jpg"></image>
+    <h3>Introduction</h3>
+
+    Black head and breast, white patch on side of face, olive-green with a long tail.
+
+    <H3> Identification </H3>
+
+    A medium-sized bird with a black head, breast and conspicuous crest, with a broad white patch on the side of the
+    face that increases in size as the bird matures. It is dark olive-green, with a long tail, and a grey-white belly.
+    The eye is pale cream and the bill is black. Young birds are generally duller in colour and have a smaller crest.
+
+    <H3>Habitat</H3>
+
+    Wet habitats, including rainforest, eucalypt forest and dense scrub near watercourses, in dense vegetation near the
+    ground.
+
+    <H3>Feeding and diet</H3>
+
+    Feeding takes place alone, in pairs or in small family groups.
+
+    <H3>Communication</H3>
+
+    Its call is one of the most characteristic sounds of the Australian bush and is performed as a duet. The male makes
+    the drawn out whip crack and the female usually follows quickly with a sharp 'choo-choo'. It feeds on insects and
+    other small invertebrates, which are caught on the ground.
+
+    <H3>Breeding behaviours</H3>
+
+    A breeding pair occupies a territory, which is defended year round, with the mates staying together for many years.
+    The female makes a cup nest of sticks and bark, which is lined with finer grasses, and placed in dense vegetation
+    near the ground. The female also incubates the eggs but the young birds are fed by both parents. The birds are
+    secretive, but can be curious, and will be seen if the observer remains patient.
+  </div>
+
+  <div id="LF" class="tabcontent">
+    <h2>LION FISH</h2>
+    <p3>Scientific name: Pterois volitans</p3>
+    <image class="LF" src="/IMAGES/lionfish-1-big.jpg"></image>
+    <h3>Introduction</h3>
+
+    The Common Lionfish is a spectacular looking fish that has 13 venemous dorsal fin spines.
+
+
+    <H3> Identification </H3>
+
+    The Common Lionfish has very long pectoral and dorsal fins. The body is covered with red to black bands on a pale
+    background. Adults often have white spots along the lateral line. A tentacle is usually present above both eyes. The
+    tentacle is variable in size and shape, usually long in juveniles and leaf-like in adults.
+    <BR>
+    The species looks very similar to the Spotfin Lionfish, Pterois antennata, which has a similar distribution in
+    Australia. The two species can be distinguished by the shape and colour of the pectoral fins. The fins of P.
+    volitans are more pointed and covered with variable spots and bands, while P. antennata has more rounded fins which
+    are white to gold in colour.
+    <BR>
+    Other differences include the pectoral ray count, which is 14-16 in P. volitans and 16-17 in P. antennata. The
+    scales of P. volitans are cycloid but in P. antennata they are mostly ctenoid. The lateral scale rows number 90-120
+    in P. volitans and 50-54 in P. antennata.
+    <h3>Distribution</h3>
+
+    It is a tropical species found widely throughout the Indo-Pacific. In Australia it is known from south-western
+    Western Australia, around the tropical north of the country and south to the southern coast of New South Wales.
+    <BR>
+
+    It is now a pest species in parts of the Western Atlantic and Caribbean.
+    <!-- Satellite View -->
+    <H3>Predators</H3>
+
+    The following text is taken from Albins and Hixon (2008). "Lionfish may be cannibalistic, but otherwise have few
+    documented natural predators in their native range (Bernadsky & Goulet 1991). While it is important to mention that
+    extensive studies of predation on lionfish have not been reported, the apparent paucity of natural predators may be
+    due, in part, to the defensive dorsal, anal, and pelvic spines of lionfish, which deliver a potent venom that may be
+    fatal to fishes (Allen & Eschmeyer 1973)."
+
+    <H3> Danger to humans</H3>
+
+    The species has extremely venomous fin spines. All 13 dorsal fin spines, 1 pelvic fin spine and 3 anal fin spines
+    are venomous. The pectoral and caudal fins are not toxic because they lack spines. When disturbed by a diver, the
+    Common Lionfish often makes little effort to swim away. Instead it points its dorsal fin spines towards the
+    intruder.
+  </div>
+
+  <div id="HH" class="tabcontent">
+    <h2>THE GREAT HAMMERHEAD</h2>
+    <p3>Scientific name: Sphyrna mokarran</p3>
+    <image class="HH" src="/IMAGES/HAMMER.jpg"></image>
+    <h3>Introduction</h3>
+
+    The Great Hammerhead has a very tall first dorsal fin.
+
+    <H3> Identification </H3>
+
+    Its head width is less than 40% of the total length and the pelvic fins have concave posterior margins.
+
+    <h3>Distribution</h3>
+
+    It occurs in tropical and warm temperate seas worldwide.
+  </div>
+  <div id="RG" class="tabcontent">
+    <h2>RED GURNARD</h2>
+    <p3>Scientific name: Chelidonichthys kumu</p3>
+    <image class="RG" src="/IMAGES/GURNARD.jpg"></image>
+    <h3>Introduction</h3>
+
+    The Red Gurnard has brightly coloured pectoral fins that are used for display or startling potential predators.
+    <H3> Identification </H3>
+
+    The Red Gurnard has a bony head and a blunt snout that lacks spines. The body is covered with tiny cycloid scales. A
+    row of enlarged scales forming thorn-like bucklers is present along the bases of both dorsal fins.
+    <BR>
+
+    The species is red-brown to grey-brown above and pale below. The body has scattered red-brown blotches. The pectoral
+    fins are greenish-grey with light blue spots. The margin is pale blue and there is a black blotch with white dots
+    near the base.
+    <H3>Habitat</H3>
+
+    It is known from shallow sandy beaches and estuaries (as juveniles) down to a depth of around 200 m.
+    <BR>
+
+    It is most often encountered in trawler catches but is sometimes caught on hook and line.
+    <h3>Distribution</h3>
+
+    The species is known from temperate marine waters of the Indo-West Pacific.
+    <BR>
+
+    In Australia it occurs from southern Queensland, around the south of the country and north to the central coast of
+    Western Australia.
+    <H3>Other behaviours and adaptations</H3>
+
+    It is believed that the fish will flair its brightly coloured pectoral fins as a display or to startle potential
+    predators.
+  </div>
+
+  <div id="TM" class="tabcontent">
+    <h2>TESSELLATE MORAY</h2>
+    <p3>Scientific name: Gymnothorax favagineus</p3>
+    <image class="TM" src="/IMAGES/Tessellate.jpg"></image>
+    <h3>Introduction</h3>
+
+    The Tessellate Moray is grey to pale brown with black spots on the head, body and fins. The species occurs in
+    tropical marine waters of the Indo-West Pacific.
+    <H3> Identification </H3>
+
+    The Tessellate Moray is grey to pale brown with black spots on the head, body and fins. The spots become relatively
+    smaller as the fish grows.
+    <H3>Habitat</H3>
+
+    The species is found in depths from 1 m to at least 50 m.
+    <h3>Distribution</h3>
+
+    The Tessellate Moray occurs in tropical marine waters of the Indo-West Pacific. In Australia it is known from
+    north-western Western Australia, around the tropical north of the country and south to the central coast of New
+    South Wales.
+  </div>
+  <div id="WCA" class="tabcontent">
+    <h2>WESTERN CLOWN ANEMONEFISH</h2>
+    <p3>Scientific name: Amphiprion ocellaris</p3>
+    <image class="WCA" src="/IMAGES/Western_Clown_Anemonefish.jpg"></image>
+    <h3>Introduction</h3>
+
+    The Western Clown Anemonefish is orange with black markings on the fins. It has a white bar on the head, body and
+    caudal peduncle. The middle bar usually has a rounded bulge anteriorly.
+    <H3> Identification </H3>
+
+    The Western Clown Anemonefish is orange with black markings on the fins. It has a white bar on the head, body and
+    caudal peduncle. The middle bar usually has a rounded bulge anteriorly.
+    <BR>
+
+    A black variety with white bars occurs around Darwin, Northern Territory, Australia.
+    <BR>
+
+    The species is closely related to the Clown Anemonefish, Amphiprion percula. It has 11 dorsal spines (10 in
+    A.percula), and 17 pectoral rays (16 in A.percula).
+    <H3>Habitat</H3>
+
+    It typically inhabits coral reefs and is associated with the anemones Heteractis magnifica, Stichodactyla gigantea,
+    S.mertensii and Stoichactis kenti.
+    <BR>
+
+    The Western Clown Anemonefish is found in depths from 3 m to 15 m.
+    <h3>Distribution</h3>
+
+    The fish occurs in tropical marine waters of the Indo-Malaysian region, from the Ryukyu Islands, Japan, throughout
+    South-east Asia and south to Australia.
+  </div>
+  <div id="WS" class="tabcontent">
+    <h2>WEEDY SCORPIONFISH</h2>
+    <p3>Scientific name: Rhinopias aphanes</p3>
+    <image class="WS" src="/IMAGES/Weedy_Scorpionfish.jpg"></image>
+    <h3>Introduction</h3>
+
+    The Weedy Scorpionfish is easily overlooked by divers even though it sits on the coral, often in full view. The
+    species varies in colour from yellow to brown, green or black and is covered by a camouflaging maze-like pattern.
+    <H3> Identification </H3>
+    The species has a distinctive head shape, an upturned mouth, tentacles on the snout, and skin flaps on the body. The
+    species varies in colour from yellow to brown, green or black and is covered by a maze-like pattern. Surprisingly,
+    the Weedy Scorpionfish is easily overlooked by divers even though it sits on the coral, often in full view.
+    <H3>Habitat</H3>
+
+    The species is found in coral reefs between depths of 6 m to 25 m.
+    <h3>Distribution</h3>
+
+    The Weedy Scorpionfish is recorded from north-eastern Australia as well as other areas of the Pacific and Japan.
+  </div>
+
+  <div id="YCW" class="tabcontent">
+    <h2>YELLOW CRESTED WEEDFISH</h2>
+    <p3>Scientific name: Cristiceps aurantiacus</p3>
+    <image class="YCW" src="/IMAGES/Yellow Crested Weedfish.jpg"></image>
+    <h3>Introduction</h3>
+
+    The Yellow Crested Weedfish usually occurs in areas of seaweed. Its behaviour and colouration make the species hard
+    to observe.
+    <H3> Identification </H3>
+    The Yellow Crested Weedfish has a tall first dorsal fin that originates in front of both the eye and the
+    supraorbital tentacle. The second dorsal fin has a long base. There is often a gap between the second last and third
+    last dorsal fin rays. The colouration of this species can vary from brown to yellow or orange, sometimes with
+    touches of pink. Juveniles are paler and may have faint bars.
+    <BR>
+
+    Three species of Cristiceps are recorded from Australia. The Crested Weedfish, Cristiceps australis, has a lower
+    first dorsal fin that originates over the eye (not in front of it) and behind the supraorbital tentacle. The
+    Silverside Weedfish, Cristiceps argyropleura, has a triangular first dorsal fin that is attached to the second
+    dorsal fin by a membrane.
+    <H3>Habitat</H3>
+
+    The species lives among kelp on rocky reefs.
+    <h3>Distribution</h3>
+
+    The species is known from the southern coast of Queensland to Bass Strait and around the south-western coast of
+    Western Australia.
+  </div>
+
+  <div id="ZS" class="tabcontent">
+    <h2>ZEBRA SHARK</h2>
+    <p3>Scientific name: Stegostoma fasciatum</p3>
+    <image class="ZS" src="/IMAGES/Zebra-Shark-.jpg"></image>
+    <h3>Introduction</h3>
+
+    The Zebra Shark is a sluggish slow-swimming fish that feeds primarily on gastropod and bivalve molluscs. It is
+    unagressive when approached underwater and considered to be harmless.
+    <H3> Identification </H3>
+    The Zebra Shark has large pectoral fins, two close-set, spineless dorsal fins and a very long caudal fin that lacks
+    a ventral lobe. It is a slow-moving species that has 5 gill slits (slits 4 and 5 overlap) and strong ridges along
+    the upper sides. It is usually yellow-brown in colour with a covering of dark brown spots. Individuals less than 70
+    cm in length are brown with narrow yellow to white bars and blotches.
+    <H3>Habitat</H3>
+
+    The Zebra Shark is often seen on sandy bottoms.
+
+    <h3>Distribution</h3>
+
+    It is found in coastal waters throughout the tropical Indo-West Pacific. In Australia it is recorded from the
+    western coast of Western Australia, around the tropical north and south to the central coast of New South Wales.
+    <H3>Feeding and diet</H3>
+
+    The Zebra Shark feeds primarily on gastropod and bivalve molluscs with lesser amounts of crabs, shrimps and small
+    fishes.
+
+    <H3> Breeding behaviours</H3>
+
+    The species is oviparous, laying large (17 cm in length), dark coloured egg cases that have tufts of hair-like
+    fibres which serve to anchor them to the bottom.
+
+  </div>
+  <div id="WA" class="tabcontent">
+    <h2>WARATAH ANEMONE</h2>
+    <p3>Scientific name: Actinia tenebrosa</p3>
+    <image class="WA" src="/IMAGES/Waratah Anemone.jpg"></image>
+    <h3>Introduction</h3>
+
+    The Waratah Anemone is named after the beautiful red Waratah flower that is the emblem of New South Wales.
+    <H3>Identification</H3>
+
+    This small, brown-red anemone is the most noticeable species of anemone on Sydney's rocky shores.
+
+
+    <h3>Distribution</h3>
+
+    The Waratah Anemone is found throughout southern Australia.
+    <H3>Other behaviours and adaptations</H3>
+
+    At low tide the Waratah Anemone looks like a small red blob on crevices near rock pools. In this state it has all
+    its tentacles drawn in to minimise its exposure to the air while it waits for the return of the tide. Quite often, a
+    number of small anemones will be near the adult. This is because the young are released, fully developed, through
+    the adult anemone's mouth. The offspring attach to the nearest rock surface available. At high tide or in rock pools
+    with plenty of water, the anemone opens out to feed, unfurling its beautiful red tentacles.
+
+  </div>
+  <div class="clearfix"></div>
+
+  <H1 class="txt1">WATER IS THE LIFEBLOOD OF THE EARTH.<br>
+    <p4>Nexus Aquarium helps sustain our waters for future generations.</p4>
+  </H1>
+  <div class="footer">
+    <div class="grid-container">
+      <div class="grid-item item1"></div>
+      <div class="grid-item item2">THE AVERAGE DEPTH OF THE OCEAN IS 3,795M.</div>
+      <div class="grid-item item3">
+        <p7>CREATORS</p7>
+        <br>
+        <image class="namelogo1" src="images/namelogo1.svg">
+          <image class="namelogo2" src="images/namelogo2.svg">
+
+      </div>
+      <div class="grid-item item4">
+        <P4>WE ARE HERE<BR></P4> 590 CMT8, Ward 11, District 3, HCM
+      </div>
+      <div class="grid-item item5">
+        <br>
+        <P5>HOURS<BR></P5>MONDAY - SATURDAY <BR> 9.30AM - 5PM
+      </div>
+      <div class="grid-item item6">
+        <P6>CONTACT</P6><br><p8 id="txtinf">
+        <a href="mailto:TheNexusAquarium@gmail.com"><span class="glyphicon glyphicon-envelope"></span> &nbsp
+          NEXUSAQUARIUM@fpt.edu.vn</a>
+        <br> <a href="tel:1987654321"><span class="glyphicon glyphicon-phone"></span> &nbsp 1987654321 </a>
+        <br> <a href="https://goo.gl/maps/nVYEMgM6689Pm3AGA"><span class="glyphicon glyphicon-home"></span> &nbsp 590
+          CMT8
+          street, District 3, HCM City</a></p8>
+      </div>
+    </div>
+  </div>
+  <script>
+    function openCity(evt, cityName) {
+      var i, tabcontent, tablinks;
+      tabcontent = document.getElementsByClassName("tabcontent");
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+      }
+      tablinks = document.getElementsByClassName("tablinks");
+      for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+      }
+      document.getElementById(cityName).style.display = "block";
+      evt.currentTarget.className += " active";
+    }
+  </script>
+  </script>
+</body>
+
+</html>
