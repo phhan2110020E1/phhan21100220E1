@@ -82,6 +82,7 @@
   padding-top: 20px;
   font-size: 1.15em;
 }
+
   /*footer*/
   .menuFooter{
   padding: 10px 0 10px 0;
@@ -141,31 +142,108 @@ footer a:hover{
     color: black;
     text-decoration: none;
   }
-  /*bonus*/
-  .right-side-bar {
+  
+  .menu-box {
+    right: 5%;
+    position: relative;
+    height: 300px;
+    border: 10px solid white;
+    border-radius: 10px;
     text-align: center;
-    justify-content: center;
-    padding: 20px 5px;
-    display: block;
-    position: fixed;
-    top: 30%;
-    right: 10px;
-    z-index: 99;
-    height: 150px;
-    width: 50px;
-    font-size: 25px;
-    background: rgba(3, 3, 3, 0.5);
-    border-radius: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 10px;
+    background: snow;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  .menu-item {
+    transition: all 200ms ease-in-out;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  }
+  
+  
+  .menu-item:hover {
+    transform: translateY(-8%);
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+      rgba(0, 0, 0, 0.22) 0px 15px 12px;
+  }
+  
+  .menu-footer{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 25px;
+  }
+  .menu-footer a{
+    text-decoration: none;
+    font-weight: 400;
+    color: black;
+    padding: 10px 15px;
+    background: aquamarine;
+    text-transform:uppercase;
+    border-radius: 10px;
+    transition: all 200ms;
+  }
+  .menu-footer a:hover{
+    color: red;
     box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
   }
-  .right-side-bar a{
+
+
+
+
+
+
+  .img-layer img {
+    width: 105%;
+    position: absolute;
+    top: 0;
+    left: -8%;
+    transition: all 0.3s;
+  }
+  
+  .img-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 99;
+    transition: all 0.4s;
+  }
+  
+  .img-quote {
+    transform: translateY(0.5rem);
+    transition: all 0.4s;
+    opacity: 0;
+    padding: 30px 0px;
     color: white;
-  }
-  .right-side-bar a:hover{
-    font-size: 1.5em;
-  color: rgba(53, 255, 2, 0.877);
+    font-size: 15px;
   }
   
+  .img-title {
+    padding: 0 20px;
+    color: white;
+    text-shadow: 4px 3px 0px black;
+  }
+
+  .img-layer:hover .img-title{
+    color: black;
+    text-shadow: 4px 3px 0px white;
+  }
   
+  .img-layer:hover .img-content {
+    bottom: 3rem;
+  }
+  
+  .img-layer:hover .img-quote {
+    opacity: 1;
+    transform: none;
+  }
+  
+  .img-layer:hover img {
+    left: 0;
+  }
+  
+ 
   
   
