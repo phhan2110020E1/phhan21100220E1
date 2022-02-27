@@ -13,3 +13,7 @@ function kiemtra(){
       return false;
     }
 }
+function goToURL() {
+  location.href = 'BOOKING.html';
+
+}

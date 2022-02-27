@@ -23,6 +23,9 @@
     <script src="https://use.fontawesome.com/34fc0a3bbd.js"></script>
     <link href="https://use.fontawesome.com/34fc0a3bbd.css" media="all" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
 </head>
 <style>
   * {
@@ -111,20 +114,22 @@
     background-repeat: no-repeat;
     background-size: cover;
     border-bottom: 15px solid black;
+    
   }
 
   .ht {
-    top: 10px;
+    top: 0px;
     position: absolute;
-    right: 0;
     z-index: 1;
   }
 
 
   p {
-    background-color: rgb(255, 255, 255);
-    color: #37506a;
+    color: #ffffff;
     font-size: 20px;
+    right: 0;
+    z-index:1;
+    position:absolute;
   }
 
   p1 {
@@ -145,7 +150,7 @@
   ;
    bottom:0;
    width:100%;
-   height:410px; 
+   height:fit-content; 
    background-color: #3e5468;
 
 }
@@ -174,25 +179,8 @@ position: relative;
 width: 50%;
 border-right: 10px double rgba(255, 255, 255, 0.726);
 }
-.namelogo1 {
-    width: 13%;
-    position: absolute;
-    left: 14%;
-    top: 34%;
-  }
-
-  .namelogo2 {
-    width: 13%;
-    position: absolute;
-    left: 24%;
-    top: 34%;
-  }
-  .namelogo3 {
-    width: 13%;
-    position: absolute;
-    left: 34%;
-    top: 34%;
-  }
+.image1 ,.image2 ,.image3{
+  width:30%;}
 .grid-container {
   display: grid;
   grid-gap: 10px;
@@ -205,13 +193,14 @@ border-right: 10px double rgba(255, 255, 255, 0.726);
 }
 
 .item1 {
-  grid-column: 1/span 2 ;
-  grid-row: 2/span 4;
-  background-image: url(NEXUS-2.png);
-  background-position: center;
-    background-repeat: no-repeat;
+  grid-column: 1/span 1;
+    grid-row: 2/span 3;
+    background-position: center;
+    background-repeat: no-repeat; 
     background-size: cover;
-border-right: 3px double white ;
+    border-right: 3px double white;
+        display:inline-block;   
+  float:none;
 }
 
 .item2 {
@@ -237,6 +226,7 @@ border-right: 3px double white ;
 
 }
 .item5 {
+  border: 2px dotted black;
 
   grid-column: 3/ span 2;
   grid-row: 4;
@@ -320,15 +310,26 @@ padding: 200PX;
   border: black solid 1px;
 width: 200px;
 }
+
+
+
+
+
+
+
 </style>
 
 <body>
   <div id="navbar">
     <div class="ht">
-      <p>Open Today From: 9:30AM - 5:00PM <a href="BOOKING.html"><p1>Get Ticket</p1></a>
-      </p>
+      <a1 href="javascript:void(0)" onclick="goToURL()">
+        <span>GET TICKET</span>
+        <div class="wave"></div>
+
+      </a1>
 
     </div>
+    <p><br>Open Today From: 9:30AM - 5:00PM </p>
 
     <div class="bg-img" src>
 
@@ -348,19 +349,50 @@ width: 200px;
   </nav>
   <section>
     <div class="container-fluid">
-     <div class="col-md-6">
+     <!-- <div class="col-md-6">
        <iframe width="420" height="345" src="https://youtube.com/clip/UgkxKlkk97p9baX6IeeACwwS-V5c1c8SLjrZ"></iframe>
-      <!-- <img class="img" src="images/2021-09-28_turtle_baby-terrapin-being-held_right-center_001.jpg" left="0"width="110%" height="355"> -->
+      <img class="img" src="images/2021-09-28_turtle_baby-terrapin-being-held_right-center_001.jpg" left="0"width="110%" height="355">
       <h2 align="center" class="text1">Welcome to The Nexus Aquarium</h2>
       <a href="#">
       <div class="text2" align="center">
         GET TICKETS
       </div>
     </a>
-     </div>
-     <div class="col-md-6">
-      <video muted autoplay controls width="105%" height="355" src="videos/Aquarium.mp4"></video>
-     </div>
+     </div> -->
+     <div class="col-md-12">
+      <div class="container1">
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+          <!-- Indicators -->
+          <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+          </ol>
+      
+          <div class="carousel-inner">
+      
+            <div class="item active">
+              <video muted autoplay controls loop src="videos/Pexels Videos 1526909.mp4"></video>
+      
+            </div>
+      
+          
+            <div class="item">
+              <video muted autoplay controls loop src="videos/production ID_4814932.mp4"></video>
+      
+            </div>
+        
+          </div>
+          <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="right carousel-control" href="#myCarousel" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+      </div>
+           </div>
      <h1 class="news" align="center">FEATURED NEWS</h1>
        <div class="col-md-4">
          <img src="images/images-news-oil-spill-lill_600_q85.jpg" width="100%">
@@ -389,7 +421,7 @@ width: 200px;
          <br>
 
          
-         <h1 class="gallery">Gallery</h1>
+         <h1 class="gallery">GALLERY</h1>
          <div class="container menu-box">
     
               <div class="col-md-3">
@@ -486,7 +518,18 @@ width: 200px;
     
         
               <div class="menu-footer">
-                  <a href="gallery.html#mot">See More</a>
+                <div id="workarea">
+                  <div class="position">
+                    <div class="svg-wrapper">
+                      <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
+                        <rect id="shape" height="40" width="150" />
+                        <div id="text">
+                          <a href=""><span class="spot"></span>SEE MORE</a>
+                        </div>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
               </div>      
         
         </div>
@@ -498,17 +541,16 @@ width: 200px;
 <H1 class="txt1">WATER IS THE LIFEBLOOD OF THE EARTH.<br><p4>Nexus Aquarium helps sustain our waters for future generations.</p4></H1>
 <div class="footer">
   <div class="grid-container">
-    <div class="grid-item item1"></div>
+    <div class="grid-item item1" ><image src="NEXUS-2.png"></image></div>
     <div class="grid-item item2">THE AVERAGE DEPTH OF THE OCEAN IS 3,795M.</div>
     <div class="grid-item item3">
       <p7>CREATORS</p7>
       <br>
-      <image class="namelogo1" src="images/namelogo1.svg">
-        <image class="namelogo2" src="images/namelogo2.svg">
-          <image class="namelogo3" src="images/namelogo3.svg">
+      <img class="image1" src="images/Blue Circle Wave Surf Club Sports Logo.svg"></img>  
+      <img class="image2" src="images/Blue Circle Wave Surf Club Sports Logo.svg"></img>  
+      <img class="image3" src="images/Blue Circle Wave Surf Club Sports Logo.svg"></img>  
 
-
-    </div>
+</div>
     <div class="grid-item item4">
       <P4>WE ARE HERE<BR></P4> 590 CMT8, Ward 11, District 3, HCM
     </div>
@@ -527,6 +569,28 @@ width: 200px;
     </div>
   </div>
 </div>
+<script>
+  $(document).ready(function(){  
+$(".image1").hover(function(){  
+ $(this).attr('src','/images/namelogo1.svg');  
+ }, function(){  
+ $(this).attr('src','/images/Blue Circle Wave Surf Club Sports Logo.svg');  
+});  
+});
+$(document).ready(function(){  
+$(".image2").hover(function(){  
+ $(this).attr('src','/images/namelogo2.svg');  
+ }, function(){  
+ $(this).attr('src','/images/Blue Circle Wave Surf Club Sports Logo.svg');  
+});  
+});    $(document).ready(function(){  
+$(".image3").hover(function(){  
+ $(this).attr('src','/images/namelogo3.svg');  
+ }, function(){  
+ $(this).attr('src','/images/Blue Circle Wave Surf Club Sports Logo.svg');  
+});  
+});
+</script>
 
 </body>
 

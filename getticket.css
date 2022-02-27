@@ -1,0 +1,60 @@
+a1 {
+    width: 230px;
+    padding: 20px 30px;
+    height:65px;
+    position: relative;
+    display: block;
+    text-decoration: none;
+    overflow: hidden;
+    font-family:  tahoma;
+    cursor: pointer;
+
+  }
+  a1:hover .wave1 {
+    top: -120px;
+  }
+  a1 span {
+    position: relative;
+    z-index: 1;
+    color: white;
+    font-size: 15px;
+    letter-spacing: 8px;
+  }
+  a1 .wave1 {
+    width: 200px;
+    height: 200px;
+    background-color: #444857;
+    box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.5);
+    position: absolute;
+    left: 0;
+    top: -80px;
+    transition: 0.4s;
+  }
+  a1 .wave1::before, a1 .wave1::after {
+    width: 200%;
+    height: 200%;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -75%);
+  }
+  a1 .wave1::before {
+    border-radius: 45%;
+    background-color: #141414;
+    animation: wave1 5s linear infinite;
+  }
+  a1 .wave1::after {
+    border-radius: 40%;
+    background-color: rgba(20, 20, 20, 0.5);
+    animation: wave1 10s linear infinite;
+  }
+  
+  @keyframes wave1 {
+    0% {
+      transform: translate(-50%, -75%) rotate(0deg);
+    }
+    100% {
+      transform: translate(-50%, -75%) rotate(360deg);
+    }
+  }

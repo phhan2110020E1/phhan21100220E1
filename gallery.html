@@ -16,6 +16,9 @@
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
 
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-route.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="getticket.css">
+  <script src="script.js"></script>
 
 </head>
 <style>
@@ -107,17 +110,18 @@
 
 
   .ht {
-    top: 10px;
+    top: 0px;
     position: absolute;
-    right: 0;
     z-index: 1;
   }
 
 
   p {
-    background-color: rgb(255, 255, 255);
-    color: #37506a;
+    color: #ffffff;
     font-size: 20px;
+    right: 0;
+    z-index:1;
+    position:absolute;
   }
 
   p1 {
@@ -203,19 +207,23 @@
   }
 
   .MJ {
-    width: 40%;
-    position: relative;
+    width: 30%;
+    height: 220px;
+    position: sticky;
     float: center;
     display: block;
     margin-left: auto;
     margin-right: auto;
     border: 10PX SOLID rgba(0, 0, 0, 0.685);
     border-radius: 20PX;
+    height: 220px;
 
   }
 
   .FF {
     width: 41%;
+    height: 220px;
+
     position: relative;
     float: center;
     display: block;
@@ -228,6 +236,8 @@
 
   .BP {
     width: 35%;
+    height: 220px;
+
     position: relative;
     float: center;
     display: block;
@@ -239,6 +249,8 @@
 
   .BSS {
     width: 40%;
+    height: 220px;
+
     position: relative;
     float: center;
     display: block;
@@ -250,7 +262,8 @@
   }
 
   .LF {
-    width: 36%;
+    width: 36%;    height: 220px;
+
     position: relative;
     float: center;
     display: block;
@@ -261,7 +274,8 @@
   }
 
   .HH {
-    width: 44%;
+    width: 44%;    height: 220px;
+
     position: relative;
     float: center;
     display: block;
@@ -272,7 +286,8 @@
   }
 
   .RG {
-    width: 40%;
+    width: 40%;    height: 220px;
+
     position: relative;
     float: center;
     display: block;
@@ -283,7 +298,8 @@
   }
 
   .TM {
-    width: 42%;
+    width: 42%;    height: 220px;
+
     position: relative;
     float: center;
     display: block;
@@ -294,7 +310,8 @@
   }
 
   .WCA {
-    width: 36%;
+    width: 36%;    height: 220px;
+
     position: relative;
     float: center;
     display: block;
@@ -305,7 +322,8 @@
   }
 
   .WS {
-    width: 43%;
+    width: 43%;    height: 220px;
+
     position: relative;
     float: center;
     display: block;
@@ -316,7 +334,8 @@
   }
 
   .YCW {
-    width: 23%;
+    width: 23%;    height: 220px;
+
     position: relative;
     float: center;
     display: block;
@@ -327,7 +346,8 @@
   }
 
   .ZS {
-    width: 57%;
+    width: 57%;    height: 220px;
+
     position: relative;
     float: center;
     display: block;
@@ -338,7 +358,8 @@
   }
 
   .WA {
-    width: 40%;
+    width: 40%;    height: 220px;
+
     position: relative;
     float: center;
     display: block;
@@ -349,7 +370,8 @@
   }
 
   .AP {
-    width: 45%;
+    width: 45%;    height: 220px;
+
     position: relative;
     float: center;
     display: block;
@@ -360,7 +382,8 @@
   }
 
   .EW {
-    width: 40%;
+    width: 40%;    height: 220px;
+
     position: relative;
     float: center;
     display: block;
@@ -374,7 +397,7 @@
     position: a;
     bottom: 0;
     width: 100%;
-    height: 410px;
+    height: fit-content;
     background-color: #3e5468;
 
   }
@@ -400,31 +423,7 @@
 
   }
 
-  .logo2 {
-    bottom: 0;
-    position: relative;
-    width: 50%;
-    border-right: 10px double rgba(255, 255, 255, 0.726);
-  }
-  .namelogo1 {
-    width: 13%;
-    position: absolute;
-    left: 14%;
-    top: 364%;
-  }
 
-  .namelogo2 {
-    width: 13%;
-    position: absolute;
-    left: 24%;
-    top: 364%;
-  }
-  .namelogo3 {
-    width: 13%;
-    position: absolute;
-    left: 34%;
-    top: 364%;
-  }
   .grid-container {
     display: grid;
     grid-gap: 10px;
@@ -436,15 +435,19 @@
     padding: 20px;
     font-size: 20px;
   }
+.image1 ,.image2 ,.image3{
+  width:30%;
 
+}
   .item1 {
-    grid-column: 1/span 2;
-    grid-row: 2/span 4;
-    background-image: url(NEXUS-2.png);
+    grid-column: 1/span 1;
+    grid-row: 2/span 3;
     background-position: center;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat; 
     background-size: cover;
     border-right: 3px double white;
+        display:inline-block;   
+  float:none;
   }
 
   .item2 {
@@ -460,8 +463,9 @@
   }
 
   .item3 {
-    grid-column: 3 / span 2;
+    grid-column: 3/ span 1;
     grid-row: 3;
+    grid-auto-flow: dense;
   }
 
   .item4 {
@@ -472,11 +476,12 @@
   }
 
   .item5 {
+    border: 2px dotted black;
 
     grid-column: 3/ span 2;
     grid-row: 4;
     font-weight: bolder;
-
+   
   }
 
   .item6 {
@@ -484,7 +489,9 @@
     grid-row: 4;
     text-align: center;
     color: black;
+   
   }
+
   P4 {
     color: #92C1FF;
     font-size: 12PX;
@@ -523,8 +530,14 @@
 
   <div id="navbar">
     <div class="ht">
-      <p>Open Today From: 9:30AM - 5:00PM<p1>Get Ticket</p1>
-      </p>
+      <a1 href="javascript:void(0)" onclick="goToURL()">
+        <span>GET TICKET</span>
+        <div class="wave1"></div>
+
+      </a1>
+
+    </div>
+    <p><br>Open Today From: 9:30AM - 5:00PM </p>
 
     </div>
 
@@ -1097,14 +1110,15 @@
   </H1>
   <div class="footer">
     <div class="grid-container">
-      <div class="grid-item item1"></div>
+      <div class="grid-item item1"><image class="logo2" src="NEXUS-2.png"></image></div>
       <div class="grid-item item2">THE AVERAGE DEPTH OF THE OCEAN IS 3,795M.</div>
       <div class="grid-item item3">
         <p7>CREATORS</p7>
-        <br>
-        <image class="namelogo1" src="images/namelogo1.svg">
-          <image class="namelogo2" src="images/namelogo2.svg">
-            <image class="namelogo3" src="images/namelogo3.svg">
+     <br>
+              <img class="image1" src="images/Blue Circle Wave Surf Club Sports Logo.svg"></img>  
+              <img class="image2" src="images/Blue Circle Wave Surf Club Sports Logo.svg"></img>  
+              <img class="image3" src="images/Blue Circle Wave Surf Club Sports Logo.svg"></img>  
+
       </div>
       <div class="grid-item item4">
         <P4>WE ARE HERE<BR></P4> 590 CMT8, Ward 11, District 3, HCM
@@ -1138,6 +1152,26 @@
       document.getElementById(cityName).style.display = "block";
       evt.currentTarget.className += " active";
     }
+    $(document).ready(function(){  
+  $(".image1").hover(function(){  
+    $(this).attr('src','/images/namelogo1.svg');  
+    }, function(){  
+    $(this).attr('src','/images/Blue Circle Wave Surf Club Sports Logo.svg');  
+  });  
+});
+$(document).ready(function(){  
+  $(".image2").hover(function(){  
+    $(this).attr('src','/images/namelogo2.svg');  
+    }, function(){  
+    $(this).attr('src','/images/Blue Circle Wave Surf Club Sports Logo.svg');  
+  });  
+});    $(document).ready(function(){  
+  $(".image3").hover(function(){  
+    $(this).attr('src','/images/namelogo3.svg');  
+    }, function(){  
+    $(this).attr('src','/images/Blue Circle Wave Surf Club Sports Logo.svg');  
+  });  
+});
   </script>
   </script>
 </body>

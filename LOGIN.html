@@ -16,6 +16,9 @@
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
 
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-route.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="getticket.css">
+  <script src="script.js"></script>
 
 </head>
 <style>
@@ -108,9 +111,8 @@
   }
 
   .ht {
-    top: 10px;
+    top: 0px;
     position: absolute;
-    right: 0;
     z-index: 1;
   }
 
@@ -127,7 +129,13 @@
 
   }
 
-
+  p2 {
+    color: #ffffff;
+    font-size: 20px;
+    right: 0;
+    z-index:1;
+    position:absolute;
+  }
 
 
 
@@ -135,7 +143,7 @@
     position: relative;
     bottom: 0;
     width: 100%;
-    height: 410px;
+    height: fit-content;
     background-color: #3e5468;
 
   }
@@ -169,25 +177,8 @@
     width: 50%;
     border-right: 10px double rgba(255, 255, 255, 0.726);
   }
-  .namelogo1 {
-    width: 13%;
-    position: absolute;
-    left: 14%;
-    top: 34%;
-  }
-
-  .namelogo2 {
-    width: 13%;
-    position: absolute;
-    left: 24%;
-    top: 34%;
-  }
-  .namelogo3 {
-    width: 13%;
-    position: absolute;
-    left: 34%;
-    top: 34%;
-  }
+  .image1 ,.image2 ,.image3{
+  width:30%;}
   .grid-container {
     display: grid;
     grid-gap: 10px;
@@ -203,14 +194,15 @@
   }
 
   .item1 {
-    grid-column: 1/span 2;
-    grid-row: 2/span 4;
-    background-image: url(NEXUS-2.png);
+  grid-column: 1/span 1;
+    grid-row: 2/span 3;
     background-position: center;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat; 
     background-size: cover;
     border-right: 3px double white;
-  }
+        display:inline-block;   
+  float:none;
+}
 
   .item2 {
     grid-column: 3/ span 4;
@@ -237,6 +229,7 @@
   }
 
   .item5 {
+    border: 2px dotted black;
 
     grid-column: 3/ span 2;
     grid-row: 4;
@@ -395,9 +388,14 @@
 <body>
   <div id="navbar">
     <div class="ht">
-      <p>Open Today From: 9:30AM - 5:00PM<p1>Get Ticket</p1>
-      </p>
+      <a1 href="javascript:void(0)" onclick="goToURL()">
+        <span>GET TICKET</span>
+        <div class="wave1"></div>
 
+      </a1>
+
+    </div>
+    <p2><br>Open Today From: 9:30AM - 5:00PM </p2>
     </div>
 
     <div class="bg-img">
@@ -482,15 +480,16 @@
   </H1>
   <div class="footer">
     <div class="grid-container">
-      <div class="grid-item item1"></div>
+      <div class="grid-item item1"><image src="NEXUS-2.png"></image></div>
       <div class="grid-item item2">THE AVERAGE DEPTH OF THE OCEAN IS 3,795M.</div>
       <div class="grid-item item3">
         <p7>CREATORS</p7>
         <br>
-        <image class="namelogo1" src="images/namelogo1.svg">
-          <image class="namelogo2" src="images/namelogo2.svg">
-            <image class="namelogo3" src="images/namelogo3.svg">
-      </div>
+        <img class="image1" src="images/Blue Circle Wave Surf Club Sports Logo.svg"></img>  
+        <img class="image2" src="images/Blue Circle Wave Surf Club Sports Logo.svg"></img>  
+        <img class="image3" src="images/Blue Circle Wave Surf Club Sports Logo.svg"></img>  
+
+</div>
       <div class="grid-item item4">
         <P4>WE ARE HERE<BR></P4> 590 CMT8, Ward 11, District 3, HCM
       </div>
@@ -509,7 +508,28 @@
       </div>
     </div>
   </div>
-
+<script>
+     $(document).ready(function(){  
+  $(".image1").hover(function(){  
+    $(this).attr('src','/images/namelogo1.svg');  
+    }, function(){  
+    $(this).attr('src','/images/Blue Circle Wave Surf Club Sports Logo.svg');  
+  });  
+});
+$(document).ready(function(){  
+  $(".image2").hover(function(){  
+    $(this).attr('src','/images/namelogo2.svg');  
+    }, function(){  
+    $(this).attr('src','/images/Blue Circle Wave Surf Club Sports Logo.svg');  
+  });  
+});    $(document).ready(function(){  
+  $(".image3").hover(function(){  
+    $(this).attr('src','/images/namelogo3.svg');  
+    }, function(){  
+    $(this).attr('src','/images/Blue Circle Wave Surf Club Sports Logo.svg');  
+  });  
+});
+</script>
 </body>
 
 </html>
